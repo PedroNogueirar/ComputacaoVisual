@@ -1,0 +1,1 @@
+gcc -Wall -g "D:\ComputacaoVisual\main.c" -o "D:\ComputacaoVisual\output\main.exe" -I "D:\ComputacaoVisual\lib\SDL3\include" -L "D:\ComputacaoVisual\lib\SDL3\lib" -lSDL3 -lSDL3_image
