@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include<stdio.h>
+#include <stdio.h>
 
 #include "histograma.h"
 
@@ -20,7 +20,43 @@ void plotarHistograma(SDL_Surface *surface, HIST *hist)
     }
 }
 
-SDL_Surface* criarImagemHistograma(HIST *hist, int width, int height)
+void equalizarHistograma(HIST *hist)
+{
+    if (!hist || !hist->h)
+        return;
+
+    int total = 0;
+    for (int i = 0; i < 256; i++)
+        total += hist->h[i]; 
+
+    if (total == 0)
+        return; 
+  
+    float cdf[256] = {0};
+    cdf[0] = (float)hist->h[0] / total;
+    for (int i = 1; i < 256; i++)
+        cdf[i] = cdf[i - 1] + (float)hist->h[i] / total;
+
+    int h_equalizado[256];
+    for (int i = 0; i < 256; i++)
+        h_equalizado[i] = (int)(255 * cdf[i] + 0.5f);
+
+    int novo_hist[256] = {0};
+    for (int i = 0; i < 256; i++)
+    {
+        int valor = h_equalizado[i];
+        if (valor < 0)
+            valor = 0;
+        if (valor > 255)
+            valor = 255;
+        novo_hist[valor] += hist->h[i];
+    }
+
+    for (int i = 0; i < 256; i++)
+        hist->h[i] = novo_hist[i];
+}
+
+SDL_Surface *criarImagemHistograma(HIST *hist, int width, int height)
 {
     SDL_Surface *histSurface = SDL_CreateSurface(width, height, SDL_PIXELFORMAT_RGBA32);
 
@@ -33,7 +69,6 @@ SDL_Surface* criarImagemHistograma(HIST *hist, int width, int height)
         if (hist->h[i] > max)
             max = hist->h[i];
 
-    
     for (int i = 0; i < 256; i++)
     {
         int bar_height = (hist->h[i] * height) / max;
@@ -48,8 +83,7 @@ SDL_Surface* criarImagemHistograma(HIST *hist, int width, int height)
             histSurface,
             &bar,
             SDL_MapRGB(branco, NULL, 255, 255, 255));
-        }
+    }
 
-        return histSurface;
+    return histSurface;
 }
-

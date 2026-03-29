@@ -1,1 +1,1 @@
-gcc -Wall -g "D:\ComputacaoVisual\main.c" -o "D:\ComputacaoVisual\output\main.exe" -I "D:\ComputacaoVisual\lib\SDL3\include" -L "D:\ComputacaoVisual\lib\SDL3\lib" -lSDL3 -lSDL3_image
+gcc main.c histograma.c window.c -I ./include -I ./SDL3/include -I ./SDL_Image/include -L ./SDL3/lib -L ./SDL_Image/lib -lSDL3 -lSDL3_image

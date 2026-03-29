@@ -1,7 +1,7 @@
-#include <SDL3/SDL.h>
-#include <SDL3_image/SDL_image.h>
 #include <stdio.h>
 #include <string.h>
+#include <SDL3/SDL.h>
+#include <SDL3_image/SDL_image.h>
 
 #include "window.h"
 #include "histograma.h"
