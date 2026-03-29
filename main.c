@@ -185,8 +185,8 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    HIST *hist;
-    plotarHistograma(cinza, hist);
+    HIST *hist = NULL;
+    plotarHistograma(cinza, &hist);
 
     int histWidth = winW / 4;
     int histHeight = winW / 4;
@@ -198,6 +198,14 @@ int main(int argc, char *argv[])
         histWidth,
         histHeight,
         "janela histograma");
+
+    Button *histButton = malloc(sizeof(Button));
+    histButton->width = histWidth / 4;
+    histButton->height = histHeight / 4;
+    histButton->color = (SDL_Color){0, 255, 0, 255};
+    histButton->texto = "Equalizar";
+
+    ButtonRenderer *buttonRenderer = iniciarButton(histButton, janelaHist->sdlWindow);
 
     SDL_Event event;
     int running = 1;
@@ -214,6 +222,7 @@ int main(int argc, char *argv[])
 
         renderizarWindow(janelaPrincipal);
         renderizarWindow(janelaHist);
+        renderizarButton(buttonRenderer);
         SDL_Delay(16);
     }
 

@@ -6,7 +6,8 @@
                 "${workspaceFolder}/**",
                 "C:\\Users\\rafae\\Downloads\\computacao-visual-proj1\\include",
                 "C:\\Users\\rafae\\Downloads\\computacao-visual-proj1\\SDL3\\include",
-                "C:\\Users\\rafae\\Downloads\\computacao-visual-proj1\\SDL_Image\\include"
+                "C:\\Users\\rafae\\Downloads\\computacao-visual-proj1\\SDL_Image\\include",
+                "C:\\Users\\rafae\\Downloads\\computacao-visual-proj1\\SDL3_ttf\\include"
             ],
             "defines": [
                 "_DEBUG",

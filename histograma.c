@@ -3,11 +3,11 @@
 
 #include "histograma.h"
 
-void plotarHistograma(SDL_Surface *surface, HIST *hist)
+void plotarHistograma(SDL_Surface *surface, HIST **hist)
 {
-    hist = malloc(sizeof(HIST));
-    hist->h = malloc(sizeof(int) * 256);
-    memset(hist->h, 0, sizeof(int));
+    *hist = malloc(sizeof(HIST));
+    (*hist)->h = malloc(sizeof(int) * 256);
+    memset((*hist)->h, 0, sizeof(int) * 256);
     for (int y = 0; y < surface->h; y++)
     {
         Uint8 *row = (Uint8 *)surface->pixels + y * surface->pitch;
@@ -15,7 +15,7 @@ void plotarHistograma(SDL_Surface *surface, HIST *hist)
         for (int x = 0; x < surface->w; x++)
         {
             Uint8 *pixel = row + x;
-            hist->h[*pixel]++;
+            (*hist)->h[*pixel]++;
         }
     }
 }
