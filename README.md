@@ -12,20 +12,20 @@ SDL3_ttf
 
 ### Estrutura do Projeto
 ComputacaoVisual/
-├── main.c
-├── histograma.c
-├── histograma.h
-├── window.c
-├── window.h
-├── lib/
-│   └── SDL3/
-│       ├── include/
-│       └── lib/
-└── output/
-    ├── main.exe
-    ├── SDL3.dll
-    ├── SDL3_image.dll
-    └── SDL3_ttf.dll
+|-- main.c
+|-- histograma.c
+|-- histograma.h
+|-- window.c
+|-- window.h
+|-- lib/
+|   `-- SDL3/
+|       |-- include/
+|       `-- lib/
+`-- output/
+    |-- main.exe
+    |-- SDL3.dll
+    |-- SDL3_image.dll
+    `-- SDL3_ttf.dll
 
 ### Compilação
 gcc -Wall -g main.c histograma.c window.c -o output\main.exe -I"lib\SDL3\include" -L"lib\SDL3\lib" -lSDL3 -lSDL3_image -lSDL3_ttf -lm
