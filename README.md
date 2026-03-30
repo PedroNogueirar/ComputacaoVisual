@@ -41,9 +41,9 @@ Ao iniciar, o programa abre duas janelas:
 - Janela principal — exibe a imagem em escala de cinza. Se a imagem já estiver em cinza, é usada diretamente; caso contrário, é convertida usando a fórmula Y = 0.2125R + 0.7154G + 0.0721B.
 - Janela secundária — exibe o histograma da imagem com as seguintes informações:
 
-1. Média de intensidade: classifica a imagem como clara, média ou escura
-2. Desvio padrão: classifica o contraste como alto, médio ou baixo
-3. Botão para equalizar/reverter o histograma
+1. Média de intensidade: classifica a imagem como clara, média ou escura.
+2. Desvio padrão: classifica o contraste como alto, médio ou baixo.
+3. Botão para equalizar/reverter o histograma.
 
 ### Controles
 - Ação Equalizar/Ver original: Botão na janela secundária.
@@ -54,7 +54,7 @@ A imagem é salva como output_image.png na pasta onde o programa foi executado. 
 
 ### Observações
 
-1. As DLLs do SDL3 precisam estar na mesma pasta que o main.exe
-2. A fonte usada é Arial (C:/Windows/Fonts/Arial.ttf); se não encontrada, o programa roda sem texto
-3. O tamanho da janela principal se adapta à imagem, com limite de 1280×720
+1. As DLLs do SDL3 precisam estar na mesma pasta que o main.exe.
+2. A fonte usada é Arial (C:/Windows/Fonts/Arial.ttf); se não encontrada, o programa roda sem texto.
+3. O tamanho da janela principal se adapta à imagem, com limite de 1280×720.
 4. A janela secundária tem tamanho fixo de 420×520 e abre ao lado da janela principal.
