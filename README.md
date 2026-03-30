@@ -54,5 +54,4 @@ A imagem é salva como output_image.png na pasta onde o programa foi executado. 
 1. As DLLs do SDL3 precisam estar na mesma pasta que o main.exe
 2. A fonte usada é Arial (C:/Windows/Fonts/Arial.ttf); se não encontrada, o programa roda sem texto
 3. O tamanho da janela principal se adapta à imagem, com limite de 1280×720
-4. A janela secundária tem tamanho fixo de 420×520 e abre ao lado da janela principal
-CompartilharConteúdohistograma.c1 linhachistograma.h1 linhahmain.c207 linhascwindow.c1 linhacwindow.h1 linhah
+4. A janela secundária tem tamanho fixo de 420×520 e abre ao lado da janela principal.
