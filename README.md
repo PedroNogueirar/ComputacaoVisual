@@ -1,4 +1,4 @@
-# ComputacaoVisual
+<img width="791" height="68" alt="image" src="https://github.com/user-attachments/assets/2119f817-db39-41ae-95a4-88524a4e7ece" /># ComputacaoVisual
 
 ### Processador de Imagens com Histograma
 Programa em C que carrega uma imagem, converte para escala de cinza, exibe o histograma e permite equalizar a imagem.
@@ -11,6 +11,7 @@ SDL3_image
 SDL3_ttf
 
 ### Estrutura do Projeto
+```text
 ComputacaoVisual/
 |-- main.c
 |-- histograma.c
@@ -26,6 +27,7 @@ ComputacaoVisual/
     |-- SDL3.dll
     |-- SDL3_image.dll
     `-- SDL3_ttf.dll
+```
 
 ### Compilação
 gcc -Wall -g main.c histograma.c window.c -o output\main.exe -I"lib\SDL3\include" -L"lib\SDL3\lib" -lSDL3 -lSDL3_image -lSDL3_ttf -lm
