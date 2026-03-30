@@ -1,4 +1,4 @@
-<img width="791" height="68" alt="image" src="https://github.com/user-attachments/assets/2119f817-db39-41ae-95a4-88524a4e7ece" /># ComputacaoVisual
+# ComputacaoVisual
 
 ### Processador de Imagens com Histograma
 Programa em C que carrega uma imagem, converte para escala de cinza, exibe o histograma e permite equalizar a imagem.
