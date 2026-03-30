@@ -31,7 +31,7 @@ ComputacaoVisual/
 ```
 
 ### Compilação
-gcc -Wall -g main.c histograma.c window.c -o output\main.exe -I"lib\SDL3\include" -L"lib\SDL3\lib" -lSDL3 -lSDL3_image -lSDL3_ttf -lm
+gcc -Wall -g "D:\ComputacaoVisual\main.c" "ComputacaoVisual\histograma.c" "ComputacaoVisual\window.c" -o "ComputacaoVisual\output\main.exe" -I "ComputacaoVisual\lib\SDL3\include" -L "ComputacaoVisual\lib\SDL3\lib" -lSDL3 -lSDL3_image -lSDL3_ttf
 
 ### Exemplo de Uso
 .\output\main.exe caminho\da\imagem.png
