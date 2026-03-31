@@ -57,6 +57,19 @@ Ao iniciar, o programa abre duas janelas:
 
 A imagem é salva como output_image.png na pasta onde o programa foi executado. Se o arquivo já existir, é sobrescrito.
 
+### Explicação do Código
+
+**`main.c`**
+Ponto de entrada do programa. Valida a extensão do arquivo recebido por argumento, carrega a imagem com SDL_image e converte para escala de cinza caso necessário. Cria a janela principal e a janela secundária, e gerencia o loop de eventos de teclado, mouse e fechamento de janelas. Ao pressionar `S`, salva a imagem atual como `output_image.png`.
+
+
+**`histograma.c` / `histograma.h`**
+Calcula a frequência de cada nível de cinza (0–255) da imagem, a média de intensidade classificando-a como *clara*, *média* ou *escura*, e o desvio padrão classificando o contraste como *alto*, *médio* ou *baixo*. A equalização é feita via tabela CDF/LUT para redistribuir os tons. Também é responsável por renderizar as barras do histograma e os textos informativos na janela secundária.
+
+
+**`window.c` / `window.h`**
+Cria a janela secundária e a posiciona automaticamente ao lado da janela principal. Desenha o botão com primitivas SDL, sem uso de imagens externas, e gerencia seus três estados visuais: azul para o estado normal, azul claro quando o mouse está sobre o botão e azul escuro quando pressionado. O texto do botão alterna entre *"Equalizar"* e *"Ver original"* conforme o estado atual.
+
 ### Observações
 
 1. As DLLs do SDL3 precisam estar na mesma pasta que o main.exe.
