@@ -41,38 +41,36 @@ gcc -Wall -g "ComputacaoVisual\main.c" "ComputacaoVisual\histograma.c" "Computac
 ### Exemplo de Uso
 .\output\main.exe caminho\da\imagem.png
 
-### O que o programa faz
-Ao iniciar, o programa abre duas janelas:
-- Janela principal — exibe a imagem em escala de cinza. Se a imagem já estiver em cinza, é usada diretamente; caso contrário, é convertida usando a fórmula Y = 0.2125R + 0.7154G + 0.0721B.
-- Janela secundária — exibe o histograma da imagem com as seguintes informações:
+O que o programa faz
 
-1. Média de intensidade: classifica a imagem como clara, média ou escura.
-2. Desvio padrão: classifica o contraste como alto, médio ou baixo.
-3. Botão para equalizar/reverter o histograma.
+Ao ser executado, o programa abre duas janelas simultaneamente:
+Janela principal — apresenta a imagem em tons de cinza. Caso a imagem já esteja em escala de cinza, ela é utilizada diretamente; do contrário, a conversão é realizada aplicando a fórmula Y = 0.2125R + 0.7154G + 0.0721B.
+Janela secundária — exibe o histograma da imagem, contendo as seguintes informações:
+Média de intensidade: indica se a imagem é clara, média ou escura.
+Desvio padrão: indica se o contraste é alto, médio ou baixo.
+Botão para equalizar o histograma ou retornar à versão original.
 
-### Controles
-- Ação Equalizar/Ver original: Botão na janela secundária.
-- Ação Salvar imagem atual: Tecla S.
-- Ação Fechar: Tecla ESC ou Q, ou fechar a janela.
-
-A imagem é salva como output_image.png na pasta onde o programa foi executado. Se o arquivo já existir, é sobrescrito.
-
-### Explicação do Código
-
-**`main.c`**
-Ponto de entrada do programa. Valida a extensão do arquivo recebido por argumento, carrega a imagem com SDL_image e converte para escala de cinza caso necessário. Cria a janela principal e a janela secundária, e gerencia o loop de eventos de teclado, mouse e fechamento de janelas. Ao pressionar `S`, salva a imagem atual como `output_image.png`.
+Controles
+Equalizar/Ver original: Botão localizado na janela secundária.
+Salvar imagem atual: Tecla S.
+Encerrar: Tecla ESC ou Q, ou pelo fechamento da janela.
+A imagem é gravada com o nome output_image.png no diretório em que o programa foi executado. Caso o arquivo já exista, será substituído.
 
 
-**`histograma.c` / `histograma.h`**
-Calcula a frequência de cada nível de cinza (0–255) da imagem, a média de intensidade classificando-a como *clara*, *média* ou *escura*, e o desvio padrão classificando o contraste como *alto*, *médio* ou *baixo*. A equalização é feita via tabela CDF/LUT para redistribuir os tons. Também é responsável por renderizar as barras do histograma e os textos informativos na janela secundária.
+Explicação do Código
+
+main.c
+Ponto de entrada do programa. Verifica a extensão do arquivo recebido como argumento, carrega a imagem via SDL_image e realiza a conversão para escala de cinza quando necessário. Instancia a janela principal e a janela secundária, e conduz o loop de eventos de teclado, mouse e fechamento de janelas. Ao acionar a tecla S, a imagem atual é salva como output_image.png.
+
+histograma.c / histograma.h
+Responsável por calcular a frequência de cada nível de cinza (0–255) da imagem, a média de intensidade — classificando-a como clara, média ou escura — e o desvio padrão — classificando o contraste como alto, médio ou baixo. A equalização é executada por meio de uma tabela CDF/LUT que redistribui os tons da imagem. Também cuida da renderização das barras do histograma e dos textos informativos na janela secundária.
+
+window.c / window.h
+Cria a janela secundária e a posiciona automaticamente junto à janela principal. O botão é desenhado com primitivas SDL, sem depender de imagens externas, e possui três estados visuais distintos: azul no estado padrão, azul claro ao passar o mouse sobre ele e azul escuro ao ser clicado. O rótulo do botão alterna entre "Equalizar" e "Ver original" de acordo com o estado vigente.
 
 
-**`window.c` / `window.h`**
-Cria a janela secundária e a posiciona automaticamente ao lado da janela principal. Desenha o botão com primitivas SDL, sem uso de imagens externas, e gerencia seus três estados visuais: azul para o estado normal, azul claro quando o mouse está sobre o botão e azul escuro quando pressionado. O texto do botão alterna entre *"Equalizar"* e *"Ver original"* conforme o estado atual.
-
-### Observações
-
-1. As DLLs do SDL3 precisam estar na mesma pasta que o main.exe.
-2. A fonte usada é Arial (C:/Windows/Fonts/Arial.ttf); se não encontrada, o programa roda sem texto.
-3. O tamanho da janela principal se adapta à imagem, com limite de 1280×720.
-4. A janela secundária tem tamanho fixo de 420×520 e abre ao lado da janela principal.
+Observações
+As DLLs do SDL3 devem estar no mesmo diretório que o arquivo main.exe.
+A fonte utilizada é Arial (C:/Windows/Fonts/Arial.ttf); caso não seja encontrada, o programa continua funcionando sem exibir texto.
+O tamanho da janela principal se ajusta às dimensões da imagem, respeitando o limite de 1280×720.
+A janela secundária possui tamanho fixo de 420×520 e é aberta ao lado da janela principal.
