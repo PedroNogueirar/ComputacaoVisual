@@ -30,8 +30,6 @@ SDL_Window *criarJanelaSecundaria(SDL_Window *janelaPrincipal, int largura, int 
 }
 
 /* Botao */
-
-/* cores por estado */
 static void corBotao(BotaoEstado estado,
                      Uint8 *r, Uint8 *g, Uint8 *b) {
     switch (estado) {
