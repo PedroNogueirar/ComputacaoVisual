@@ -1,3 +1,7 @@
+/* Pedro Nogueira Ribeiro - 10324924 */
+/* Rafael Santos Lourenço da Silva - 10403588 */
+/* Thiago Siqueira - 10390176 */
+
 #ifndef WINDOW_H
 #define WINDOW_H
 
@@ -11,9 +15,9 @@ typedef enum {
     BTN_PRESSED
 } BotaoEstado;
 
-/* Botao desenhado com primitivas SDL */
+/* Botao desenhado com SDL */
 typedef struct {
-    SDL_FRect rect;       /* posicao e tamanho dentro da janela secundaria */
+    SDL_FRect rect;       /* Posicao e Tamanho dentro da janela secundaria */
     BotaoEstado estado;
     int equalizado;       /* 0 = mostra "Equalizar", 1 = mostra "Ver original" */
 } Botao;
