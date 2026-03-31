@@ -1,7 +1,11 @@
+/* Pedro Nogueira Ribeiro - 10324924 */
+/* Rafael Santos Lourenço da Silva - 10403588 */
+/* Thiago Siqueira - 10390176 */
+
 #include "window.h"
 #include <string.h>
 
-/* ---------- janela secundaria ---------- */
+/* Janela Secundaria */
 
 SDL_Window *criarJanelaSecundaria(SDL_Window *janelaPrincipal, int largura, int altura) {
     int px, py, pw, ph;
@@ -25,7 +29,7 @@ SDL_Window *criarJanelaSecundaria(SDL_Window *janelaPrincipal, int largura, int 
     return sec;
 }
 
-/* ---------- botao ---------- */
+/* Botao */
 
 /* cores por estado */
 static void corBotao(BotaoEstado estado,
@@ -44,15 +48,15 @@ void renderizarBotao(SDL_Renderer *renderer, Botao *botao, TTF_Font *font) {
     Uint8 r, g, b;
     corBotao(botao->estado, &r, &g, &b);
 
-    /* corpo do botao */
+    /* Corpo Botao */
     SDL_SetRenderDrawColor(renderer, r, g, b, 255);
     SDL_RenderFillRect(renderer, &botao->rect);
 
-    /* borda */
+    /* Borda */
     SDL_SetRenderDrawColor(renderer, 200, 220, 255, 255);
     SDL_RenderRect(renderer, &botao->rect);
 
-    /* texto centralizado */
+    /* Texto Centralizado */
     const char *texto = botao->equalizado ? "Ver original" : "Equalizar";
     SDL_Color branco = {255, 255, 255, 255};
 
