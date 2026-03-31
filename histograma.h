@@ -1,3 +1,7 @@
+/* Pedro Nogueira Ribeiro - 10324924 */
+/* Rafael Santos Lourenço da Silva - 10403588 */
+/* Thiago Siqueira - 10390176 */
+
 #ifndef HISTOGRAMA_H
 #define HISTOGRAMA_H
 
