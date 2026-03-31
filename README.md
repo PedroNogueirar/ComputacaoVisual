@@ -3,7 +3,7 @@
 ### Integrantes
 1. Pedro Nogueira Ribeiro - 10324924
 2. Rafael Santos Lourenço da Silva - 10403588
-3. Thiago Siqueira - 10390176
+3. Thiago Aredes de Carvalho Siqueira - 10390176
 
 ### Processador de Imagens com Histograma
 Programa em C que carrega uma imagem, converte para escala de cinza, exibe o histograma e permite equalizar a imagem.
