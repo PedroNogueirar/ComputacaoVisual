@@ -1,3 +1,8 @@
+/* Pedro Nogueira Ribeiro - 10324924 */
+/* Rafael Santos Lourenço da Silva - 10403588 */
+/* Thiago Siqueira - 10390176 */
+
+
 #include "histograma.h"
 #include <SDL3_ttf/SDL_ttf.h>
 #include <math.h>
