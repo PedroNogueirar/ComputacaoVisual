@@ -1,3 +1,7 @@
+/* Pedro Nogueira Ribeiro - 10324924 */
+/* Rafael Santos Lourenço da Silva - 10403588 */
+/* Thiago Siqueira - 10390176 */
+
 #include <SDL3/SDL.h>
 #include <SDL3_image/SDL_image.h>
 #include <SDL3_ttf/SDL_ttf.h>
